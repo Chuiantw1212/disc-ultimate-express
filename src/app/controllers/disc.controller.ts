@@ -2,7 +2,7 @@
 import type { Request, Response, NextFunction, RequestHandler } from 'ultimate-express'
 import type { CreateDiscUseCase } from '../../application/disc.usecase.ts'
 
-function createDiscController(useCase: CreateDiscUseCase): RequestHandler {
+export function createDiscController(useCase: CreateDiscUseCase): RequestHandler {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
       if (!req.is('application/json')) {

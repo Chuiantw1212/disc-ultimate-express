@@ -2,7 +2,7 @@
 
 import type { Disc } from '../../domain/disc.entity.ts'
 import type { DiscRepoPort } from '../../application/disc.repo.port.ts'
-import { db, serverTimestamp } from './admin.ts'
+import { db, serverTimestamp } from './admin'
 
 export class FirestoreDiscRepo implements DiscRepoPort {
     async create(disc: Disc): Promise<{ id: string }> {

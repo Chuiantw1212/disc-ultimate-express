@@ -8,8 +8,8 @@ if (!admin.apps.length) {
   admin.initializeApp()
 }
 
-const db = admin.firestore()
-const serverTimestamp = admin.firestore.FieldValue.serverTimestamp
+export const db = admin.firestore()
+export const serverTimestamp = admin.firestore.FieldValue.serverTimestamp
 
 module.exports = {
   db,
