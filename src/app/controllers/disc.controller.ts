@@ -1,8 +1,8 @@
 // Controller (factory-only): returns a RequestHandler bound to a CreateDiscUseCase
 import type { Request, Response, NextFunction, RequestHandler } from 'ultimate-express'
-import type { CreateDiscUseCase } from '../../application/disc.usecase'
+import type { CreateDiscUseCase } from '../../application/disc.usecase.ts'
 
-export function createDiscController(useCase: CreateDiscUseCase): RequestHandler {
+function createDiscController(useCase: CreateDiscUseCase): RequestHandler {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
       if (!req.is('application/json')) {
@@ -17,4 +17,4 @@ export function createDiscController(useCase: CreateDiscUseCase): RequestHandler
   }
 }
 
-export default createDiscController
+module.exports = createDiscController

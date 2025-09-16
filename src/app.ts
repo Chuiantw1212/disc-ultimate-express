@@ -1,10 +1,10 @@
-import express from 'ultimate-express'
+const express = require('ultimate-express')
 
-import { FirestoreDiscRepo } from './infra/firestore/disc.repo'
-import { CreateDiscUseCase } from './application/disc.usecase'
-import { createDiscController } from './app/controllers/disc.controller'
+const { FirestoreDiscRepo } = require('./infra/firestore/disc.repo')
+const { CreateDiscUseCase } = require('./application/disc.usecase')
+const { createDiscController } = require('./app/controllers/disc.controller')
 
-export function buildApp() {
+function buildApp() {
   const app = express()
   app.disable('x-powered-by')
   app.use(express.json({ limit: '1mb' }))
@@ -30,4 +30,4 @@ if ((require as any).main === module) {
   })
 }
 
-export default buildApp
+module.exports = buildApp
